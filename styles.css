@@ -48,6 +48,9 @@ header {
     border-radius: 5px;
 }
 
+
+
+/*sidebar*/
 .sidebar {
     display: flex;
     flex-direction: column;
@@ -80,6 +83,8 @@ header {
     transform: scale(1.1); /* Gjør sirklene litt større ved hover */
 }
 
+
+/*utvalgte*/
 .topprodukt {
     display: flex;
     gap: 20px; /* Mellomrom mellom boksene */
