@@ -13,6 +13,9 @@ header {
     width: flex; /* Full bredde av skjermen */
 }
 
+
+
+/*navbar*/
 .navbar {
     display: flex;
     justify-content: space-between; /* Plasserer elementene på hver sin side */
@@ -112,7 +115,14 @@ header {
 
 .produkt a:hover {
     color: #000000;
+    transform: scale(1.05);
 }
+
+
+
+
+
+
 
 .component-section {
     padding: 20px;
@@ -150,6 +160,97 @@ header {
 }
 
 .component-box:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05); /* Gjør boksen litt større ved hover */
+}
+
+
+
+
+
+
+
+
+
+.componentshown-section {
+    padding: 20px;
+    margin-left: 120px; /* Gir plass til sidebaren */
+}
+
+.componentshown-section h1 {
+    text-align:center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 2em;
+    color:#ffffff;
+    background-color: #33c2ff;
+    border-radius: 10px;
+    padding:10px;
+
+}
+
+.componentshown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 kolonner */
+    gap: 20px; /* Mellomrom mellom firkantene */
+}
+
+.componentshown-box {
+    background-color: #f0f0f0;
+    padding: 60px;
+    border-radius: 10px; /* Runde hjørner */
+    text-align:center;
+    height: 200px; /* Juster høyden etter behov */
+    display: flex;
+    margin-top: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.componentshown-box:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05); /* Gjør boksen litt større ved hover */
+}
+
+
+
+
+
+.utstyr-section {
+    padding: 20px;
+    margin-left: 120px; /* Gir plass til sidebaren */
+}
+
+.utstyr-section h1 {
+    text-align:center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 2em;
+    color:#ffffff;
+    background-color: #33c2ff;
+    border-radius: 10px;
+    padding:10px;
+
+}
+
+.utstyr-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 4 kolonner */
+    gap: 70px; /* Mellomrom mellom firkantene */
+}
+
+.utstyr-box {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 40px; /* Runde hjørner */
+    text-align:center;
+    height:80px;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.utstyr-box:hover {
     background-color: #e0e0e0;
     transform: scale(1.05); /* Gjør boksen litt større ved hover */
 }
