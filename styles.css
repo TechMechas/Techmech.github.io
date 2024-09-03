@@ -85,6 +85,7 @@ header {
     justify-content: space-between; /* Fordeler boksene jevnt */
 }
 
+
 .produkt {
     flex: 1; /* Gjør hver boks like stor */
     text-align: center; /* Sentraliserer tekst i boksen */
@@ -139,7 +140,7 @@ header {
 .component-box {
     background-color: #f0f0f0;
     padding: 40px;
-    border-radius: 20px; /* Runde hjørner */
+    border-radius: 40px; /* Runde hjørner */
     text-align: center;
     height: 100px; /* Juster høyden etter behov */
     display: flex;
