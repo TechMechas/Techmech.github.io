@@ -1,23 +1,34 @@
 body {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #a2a2a2;
+    display: flex;
+    flex-direction: column; /* Sørger for at headeren og innholdet er i kolonne */
 }
 
 header {
     background-color: #33c2ff;
     padding: 10px 20px;
+    width: 100%; /* Full bredde av skjermen */
 }
 
 .navbar {
     display: flex;
     justify-content: space-between; /* Plasserer elementene på hver sin side */
     align-items: center;
-    
 }
 
-.nav-left, .nav-right {
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-left a {
+    font-size: x-large;
+}
+
+.nav-right {
     display: flex;
     gap: 20px;
 }
@@ -29,19 +40,48 @@ header {
     transition: background-color 0.3s ease;
 }
 
-.nav-left a {
-    font-size: x-large;
-}
-
 .nav-left a:hover, .nav-right a:hover {
     background-color: #555;
     border-radius: 5px;
+}
+
+.sidebar {
+    display:flex;
+    flex-direction: column;
+    gap: 20px; /* Mellomrom mellom sirklene */
+    background-color: #333; /* Lys grå bakgrunn */
+    padding: 10px;
+    width: 100px;
+    align-items: center; /* Sentraliserer sirklene horisontalt */
+    position: fixed; /* Fikser sidebaren på plass */
+    top: 78px; /* Plasserer sidebaren under headeren */
+    left: 0; /* Plasserer sidebaren til venstre */
+    bottom: 0; /* Utvider sidebaren til bunnen av skjermen */
+}
+
+.circle-box {
+    width: 80px;
+    height: 80px;
+    background-color: #333;
+    color: white;
+    border-radius: 50%; /* Gjør boksene sirkulære */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.circle-box:hover {
+    background-color: #555;
+    transform: scale(1.1); /* Gjør sirklene litt større ved hover */
 }
 
 .topprodukt {
     display: flex;
     gap: 20px; /* Mellomrom mellom boksene */
     padding: 20px;
+    margin-left: 120px; /* Gir plass til sidebaren til venstre */
     justify-content: space-between; /* Fordeler boksene jevnt */
 }
 
