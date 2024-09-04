@@ -11,29 +11,38 @@ header {
     background-color: #33c2ff;
     padding: 10px 20px;
     width: flex; /* Full bredde av skjermen */
+    position: fixed;
+    right:0;
+    left:0;
+    z-index:1000;
 }
 
 
 
 /*navbar*/
 .navbar {
+    
     display: flex;
     justify-content: space-between; /* Plasserer elementene på hver sin side */
     align-items: center;
+    right: 0;
 }
 
 .nav-left {
-    display: flex;
+    display:flex;
     align-items: center;
 }
 
 .nav-left a {
     font-size: x-large;
+    
 }
 
 .nav-right {
     display: flex;
     gap: 20px;
+    position:fixed;
+    right:0;
 }
 
 .nav-left a, .nav-right a {
@@ -259,3 +268,4 @@ header {
     background-color: #e0e0e0;
     transform: scale(1.05); /* Gjør boksen litt større ved hover */
 }
+
