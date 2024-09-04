@@ -5,7 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechMech</title>
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .scroll {
+            height: 3000px;
+            background-color: lightgreen;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100%;
+            background-color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+            gap: 10px;
+        }
+        .sidebar button {
+            width: 80px;
+            padding: 10px;
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .sidebar button:hover {
+            background-color: #777;
+        }
+    </style>
 </head>
+
+
 <body>
     <header>
         <nav class="navbar">
@@ -22,7 +57,36 @@
         </nav>
     </header>
 
-    <aside class="sidebar">
+
+    <div class="sidebar">
+        <button class="scroll-btn" data-scroll="0">1</button>
+        <button class="scroll-btn" data-scroll="500">2</button>
+        <button class="scroll-btn" data-scroll="1000">3</button>
+        <button class="scroll-btn" data-scroll="1500">4</button>
+        <button class="scroll-btn" data-scroll="2000">5</button>
+        <button class="scroll-btn" data-scroll="2500">6</button>
+        <button class="scroll-btn" data-scroll="3000">7</button>
+        <button class="scroll-btn" data-scroll="3500">8</button>
+        <button class="scroll-btn" data-scroll="4000">9</button>
+        <button class="scroll-btn" data-scroll="4500">10</button>
+    </div>
+
+   
+    <script>
+        document.querySelectorAll('.scroll-btn').forEach(function(button) {
+            button.addEventListener('click', function() {
+                const scrollPosition = parseInt(this.getAttribute('data-scroll'));
+                window.scrollTo({
+                    top: scrollPosition,
+                    behavior: 'smooth' // Optional: Adds smooth scrolling
+                });
+            });
+        });
+    </script>
+
+
+
+    aside class="sidebar">
         <div class="circle-box">1</div>
         <div class="circle-box">2</div>
         <div class="circle-box">3</div>
@@ -33,7 +97,7 @@
         <div class="circle-box">8</div>
         <div class="circle-box">9</div>
         <div class="circle-box">10</div>
-    </aside>
+</aside>
 
     <div class="topprodukt">
         <div class="produkt">

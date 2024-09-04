@@ -74,7 +74,7 @@ header {
     bottom: 0; /* Utvider sidebaren til bunnen av skjermen */
 }
 
-.circle-box {
+.scroll-btn {
     width: 80px;
     height: 80px;
     background-color: #333;
@@ -87,7 +87,7 @@ header {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.circle-box:hover {
+.scroll-btn:hover {
     background-color: #555;
     transform: scale(1.1); /* Gjør sirklene litt større ved hover */
 }
