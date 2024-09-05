@@ -18,6 +18,51 @@ header {
 }
 
 
+@media only screen and (max-width: 768px) {
+    .sidebar {
+        display: none; /* Skjul sidebar på små skjermer */
+    }
+
+    .navbar {
+        flex-direction: column; /* Stabler navigasjonslenkene vertikalt */
+    }
+
+    .categori-box {
+        flex: 1 1 100%; /* Kategoriene tar hele bredden */
+        text-align: center; /* Sentraliser tekst på små skjermer */
+    }
+
+    /* Reduser padding og marginer */
+    .produkt, .component-box, .utstyr-box, .byggdin-box {
+        padding: 1rem;
+        margin: 0.5rem;
+    }
+
+    .component-grid, .utstyr-grid, .byggdin-grid {
+        grid-template-columns: 1fr; /* Vis elementene i én kolonne på små skjermer */
+    }
+}
+
+/* Endringer for skjermer som er mindre enn 480px (mobiler) */
+@media only screen and (max-width: 480px) {
+    .navbar {
+        font-size: 0.9rem; /* Reduser skriftstørrelsen på mobilen */
+    }
+
+    header {
+        padding: 0.5rem;
+    }
+
+    .produkt {
+        padding: 0.5rem;
+        height: auto; /* La høyden justeres automatisk på mobil */
+    }
+
+    .categori-box {
+        padding: 0.5rem;
+    }
+}
+
 
 /*navbar*/
 .navbar {
@@ -63,7 +108,7 @@ header {
     padding: 0.5rem;
     font-size: 1rem;
     border-radius: 0.5rem;
-    border: 1px solid #ccc;
+    border: 1px solid #333;
     width: 12.5rem;
     transition: width 0.3s ease;
 }
