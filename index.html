@@ -45,10 +45,13 @@
                 <a href="#techmech"><strong>TechMech</strong></a>
             </div>
             <div class="nav-right">
+                <input type="text" id="searchInput" placeholder="Søk i kategorier...">
                 <a href="navbar/info.html">Info</a>
                 <a href="navbar/hjelp.html">Hjelp</a>
                 <a href="navbar/logginn.html">Logg inn</a>
                 <a href="navbar/innstillinger.html">Innstillinger</a>
+
+             
 
             </div>
         </nav>
@@ -85,6 +88,30 @@
             });
         });
     </script>
+
+
+<script>
+    // Funksjon for å filtrere kategoriene basert på søk
+    function filterCategories() {
+        const searchInput = document.getElementById('searchInput').value.toLowerCase();
+        const categories = document.getElementsByClassName('categori-box');
+
+        // Loop gjennom alle kategoriene og skjul de som ikke matcher søket
+        for (let i = 0; i < categories.length; i++) {
+            const categoryText = categories[i].textContent.toLowerCase();
+
+            // Sjekk om søket stemmer overens med kategorien
+            if (categoryText.includes(searchInput)) {
+                categories[i].style.display = '';
+            } else {
+                categories[i].style.display = 'none';
+            }
+        }
+    }
+
+    // Lytt til input i søkefeltet
+    document.getElementById('searchInput').addEventListener('input', filterCategories);
+</script>
 
 
 <div class="categorier">

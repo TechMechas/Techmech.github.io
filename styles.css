@@ -58,6 +58,20 @@ header {
 }
 
 
+
+#searchInput {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    width: 12.5rem;
+    transition: width 0.3s ease;
+}
+
+#searchInput:focus {
+    width: 18.75rem; /* Utvid søkefeltet når det er i fokus */
+}
+
 /*sidebar*/
 .sidebar {
     display: flex;
