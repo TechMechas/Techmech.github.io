@@ -58,6 +58,24 @@
     </header>
 
 
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+<nav class="navbar" id="navbar">
+    <a href="navbar/info.html">Info</a>
+    <a href="navbar/hjelp.html">Hjelp</a>
+    <a href="navbar/logginn.html">Logg inn</a>
+    <a href="navbar/innstillinger.html">Innstillinger</a>
+</nav>
+
+<script>
+    function toggleMenu() {
+        var x = document.getElementById("navbar");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+</script>
  
 
 

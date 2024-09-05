@@ -7,6 +7,27 @@ body {
     flex-direction: column; /* Sørger for at headeren og innholdet er i kolonne */
 }
 
+/* Endringer for skjermer som er mindre enn 480px (mobiler) */
+@media only screen and (max-width: 480px) {
+    .navbar {
+        font-size: 0.9rem; /* Reduser skriftstørrelsen på mobilen */
+    }
+
+    header {
+        padding: 0.5rem;
+    }
+
+    .produkt {
+        padding: 0.5rem;
+        height: auto; /* La høyden justeres automatisk på mobil */
+    }
+
+    .categori-box {
+        padding: 0.5rem;
+    }
+}
+
+
 header {
     background-color: #33c2ff;
     padding: 0.75rem 1.25rem;
@@ -15,6 +36,25 @@ header {
     right:0;
     left:0;
     z-index:1000;
+}
+
+.hamburger {
+    display: none; /* Gjem hamburger-ikonet på desktop */
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+    }
+
+    .hamburger {
+        display: block; /* Vis hamburger-ikonet på mobil */
+    }
 }
 
 
@@ -43,25 +83,6 @@ header {
     }
 }
 
-/* Endringer for skjermer som er mindre enn 480px (mobiler) */
-@media only screen and (max-width: 480px) {
-    .navbar {
-        font-size: 0.9rem; /* Reduser skriftstørrelsen på mobilen */
-    }
-
-    header {
-        padding: 0.5rem;
-    }
-
-    .produkt {
-        padding: 0.5rem;
-        height: auto; /* La høyden justeres automatisk på mobil */
-    }
-
-    .categori-box {
-        padding: 0.5rem;
-    }
-}
 
 
 /*navbar*/
