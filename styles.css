@@ -492,19 +492,15 @@ header {
 .byggdinegen-section h3 {
     text-align: center;
     color:#ffffff;
-    background-color: #555;
+    background-color:#a2a2a2;
     border-radius: 0.625rem;
 }
 
-.byggdin-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 4 kolonner */
-    gap: 4.375rem; /* Mellomrom mellom firkantene */
-}
+
 
 .byggdin-box {
     background-color: #f0f0f0;
-    padding: 4.25rem;
+    padding: 2.25rem;
     border-radius: 2.5rem; /* Runde hjørner */
     text-align:center;
     height:5rem;
@@ -517,4 +513,11 @@ header {
 .byggdin-box:hover {
     background-color: #e0e0e0;
     transform: scale(1.05); /* Gjør boksen litt større ved hover */
+    border-color: #33c2ff;
+    outline:#33c2ff;
+}
+
+.byggdin-box:focus {
+    border-color: #33c2ff;
+    outline: none;
 }
