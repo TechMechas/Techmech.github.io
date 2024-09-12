@@ -209,12 +209,46 @@ header {
 }
 
 
+.Event {
+    margin-top: 11rem;
+    display:flex;
+    padding:1rem;
+    margin-left: 8rem;
+    margin-bottom: 2rem;
+}
 
+.eventen {
+    flex: 1; /* Gjør hver boks like stor */
+    text-align: center; /* Sentraliserer tekst i boksen */
+    background-color: #f0f0f0; /* Lys grå bakgrunn */
+    padding: 3rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    height: 40rem;
+}
+
+.eventen a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2em;
+    display: block;
+    height: 100%; /* Gjør hele boksen klikkbar */
+    width: 100%;
+}
+
+.eventen:hover {
+    background-color: #ffffff; /* Endre bakgrunnsfarge ved hover */
+    transform: scale(1.01); /* Gjør boksen litt større ved hover */
+}
+
+.eventen a:hover {
+    color: #000000;
+    transform: scale(1.01);
+}
 
 
 /*utvalgte*/
 .topprodukt {
-    margin-top:12rem;
+    margin-top:5rem;
     display: flex;
     gap: 1rem; /* Mellomrom mellom boksene */
     padding: 1.5rem;
