@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles.css">
 
     <style>
-       
         .sidebar {
             position: fixed;
             top: 3rem;
@@ -21,6 +20,7 @@
             padding-top: 50px;
             gap: 10px;
         }
+
         .sidebar button {
             width: 80px;
             padding: 10px;
@@ -31,13 +31,12 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
+
         .sidebar button:hover {
             background-color: #777;
         }
     </style>
 </head>
-
-
 <body>
     <header>
         <nav class="navbar">
@@ -45,47 +44,39 @@
                 <a href="#techmech"><strong>TechMech</strong></a>
             </div>
             <div class="nav-right">
-                <input type="text" id="searchInput" placeholder="Søk i kategorier...">
+                <input type="text" id="searchInput" placeholder="Søk her...">
                 <a href="navbar/info.html">Info</a>
                 <a href="navbar/hjelp.html">Hjelp</a>
                 <a href="navbar/logginn.html">Logg inn</a>
                 <a href="navbar/innstillinger.html">Innstillinger</a>
-
-             
-
             </div>
         </nav>
     </header>
 
-
     <div class="hamburger" onclick="toggleMenu()">☰</div>
-<nav class="navbar" id="navbar">
-    <a href="navbar/info.html">Info</a>
-    <a href="navbar/hjelp.html">Hjelp</a>
-    <a href="navbar/logginn.html">Logg inn</a>
-    <a href="navbar/innstillinger.html">Innstillinger</a>
-</nav>
+    <nav class="navbar" id="navbar">
+        <a href="navbar/info.html">Info</a>
+        <a href="navbar/hjelp.html">Hjelp</a>
+        <a href="navbar/logginn.html">Logg inn</a>
+        <a href="navbar/innstillinger.html">Innstillinger</a>
+    </nav>
 
-<script>
-    function toggleMenu() {
-        var x = document.getElementById("navbar");
-        if (x.style.display === "block") {
-            x.style.display = "none";
-        } else {
-            x.style.display = "block";
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("navbar");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
         }
-    }
-</script>
- 
-
-
-
+    </script>
 
     <aside class="sidebar">
-        <button class="scroll-btn" data-scroll="0">1</button>
-        <button class="scroll-btn" data-scroll="750">2</button>
-        <button class="scroll-btn" data-scroll="2000">3</button>
-        <button class="scroll-btn" data-scroll="1500">4</button>
+        <button class="scroll-btn" data-scroll="0">Trending</button>
+        <button class="scroll-btn" data-scroll="750">PC deler</button>
+        <button class="scroll-btn" data-scroll="2000">Utstyr</button>
+        <button class="scroll-btn" data-scroll="1500">Bygg PC</button>
         <button class="scroll-btn" data-scroll="2000">5</button>
         <button class="scroll-btn" data-scroll="2500">6</button>
         <button class="scroll-btn" data-scroll="3000">7</button>
@@ -94,58 +85,48 @@
         <button class="scroll-btn" data-scroll="4500">10</button>
     </aside>
 
-   
     <script>
         document.querySelectorAll('.scroll-btn').forEach(function(button) {
             button.addEventListener('click', function() {
                 const scrollPosition = parseInt(this.getAttribute('data-scroll'));
                 window.scrollTo({
                     top: scrollPosition,
-                    behavior: 'smooth' // Optional: Adds smooth scrolling
+                    behavior: 'smooth'
                 });
             });
         });
     </script>
 
+    <script>
+        function filterCategories() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const categories = document.getElementsByClassName('categori-box');
 
-<script>
-    // Funksjon for å filtrere kategoriene basert på søk
-    function filterCategories() {
-        const searchInput = document.getElementById('searchInput').value.toLowerCase();
-        const categories = document.getElementsByClassName('categori-box');
-
-        // Loop gjennom alle kategoriene og skjul de som ikke matcher søket
-        for (let i = 0; i < categories.length; i++) {
-            const categoryText = categories[i].textContent.toLowerCase();
-
-            // Sjekk om søket stemmer overens med kategorien
-            if (categoryText.includes(searchInput)) {
-                categories[i].style.display = '';
-            } else {
-                categories[i].style.display = 'none';
+            for (let i = 0; i < categories.length; i++) {
+                const categoryText = categories[i].textContent.toLowerCase();
+                if (categoryText.includes(searchInput)) {
+                    categories[i].style.display = '';
+                } else {
+                    categories[i].style.display = 'none';
+                }
             }
         }
-    }
 
-    // Lytt til input i søkefeltet
-    document.getElementById('searchInput').addEventListener('input', filterCategories);
-</script>
+        document.getElementById('searchInput').addEventListener('input', filterCategories);
+    </script>
 
-
-<div class="categorier">
-    <div class="categori-box">1</div>
-    <div class="categori-box">2</div>
-    <div class="categori-box">3</div>
-    <div class="categori-box">4</div>
-    <div class="categori-box">5</div>
-    <div class="categori-box">6</div>
-    <div class="categori-box">7</div>
-    <div class="categori-box">8</div>
-    <div class="categori-box">9</div>
-    <div class="categori-box">10</div>
-</div>
-
-    
+    <div class="categorier">
+        <div class="categori-box">Gaming</div>
+        <div class="categori-box">Skjerm</div>
+        <div class="categori-box">Deler</div>
+        <div class="categori-box">Nettverk</div>
+        <div class="categori-box">Minne</div>
+        <div class="categori-box">Tastatur</div>
+        <div class="categori-box">Mus</div>
+        <div class="categori-box">Laptop</div>
+        <div class="categori-box">PC</div>
+        <div class="categori-box">Salg</div>
+    </div>
 
     <div class="topprodukt">
         <div class="produkt">
@@ -182,13 +163,11 @@
             <div class="componentshown-box">Grafikkort</div>
             <div class="componentshown-box">Hovedkort</div>
             <div class="componentshown-box">PC-kabinett</div>
-        
         </div>
     </section>
 
     <section class="utstyr-section">
-        <h1>utstyr</h1>
-       
+        <h1>Utstyr</h1>
         <div class="utstyr-grid">
             <div class="utstyr-box">MUS</div>
             <div class="utstyr-box">MUSMATTE</div>
@@ -211,8 +190,5 @@
             <div class="byggdin-box">Hovedkort</div>
         </div>
     </section>
-
-
-
 </body>
 </html>
