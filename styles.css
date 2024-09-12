@@ -163,7 +163,7 @@ header {
 .scroll-btn {
     width: 6.5rem;
     height: 6rem;
-    background-color: #333;
+    background-color:#555;
     color: white;
     border-radius: 0.75rem;/* Runde hjørner */
     display: flex;
@@ -175,9 +175,14 @@ header {
 
 .scroll-btn:hover {
     background-color: #555;
-    transform: scale(1.25); /* Gjør sirklene litt større ved hover */
+    transform: scale(1.15); /* Gjør sirklene litt større ved hover */
 }
 
+
+.scroll-btn:focus {
+    border-color: #33c2ff;
+    outline: none;
+}
 
 
 
