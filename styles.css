@@ -1,15 +1,16 @@
-/* Global stil */
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #a2a2a2;
+    display: flex;
+    flex-direction: column; /* Sørger for at headeren og innholdet er i kolonne */
 }
 
-/* Endringer for mobile enheter */
+/* Endringer for skjermer som er mindre enn 480px (mobiler) */
 @media only screen and (max-width: 480px) {
     .navbar {
-        font-size: 0.9rem;
+        font-size: 0.9rem; /* Reduser skriftstørrelsen på mobilen */
     }
 
     header {
@@ -18,81 +19,100 @@ body {
 
     .produkt {
         padding: 0.5rem;
-        height: auto;
+        height: auto; /* La høyden justeres automatisk på mobil */
     }
 
     .categori-box {
         padding: 0.5rem;
     }
-
-    .sidebar {
-        display: none;
-    }
-
-    .component-grid, .utstyr-grid, .byggdin-grid {
-        grid-template-columns: 1fr;
-    }
 }
 
-/* Global header-stil */
+
 header {
     background-color: #33c2ff;
     padding: 0.75rem 1.25rem;
-    width: 100%;
+    width: flex; /* Full bredde av skjermen */
     position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+    right:0;
+    left:0;
+    z-index:1000;
 }
 
-/* Hamburger meny for mobile enheter */
 .hamburger {
-    display: none;
+    display: none; /* Gjem hamburger-ikonet på desktop */
     font-size: 2rem;
     cursor: pointer;
     padding: 0.5rem;
 }
 
 @media only screen and (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
-
     .navbar {
         display: none;
         flex-direction: column;
         background-color: #333;
     }
 
-    .navbar a {
-        color: white;
-    }
-
-    .navbar a:hover {
-        background-color: #555;
+    .hamburger {
+        display: block; /* Vis hamburger-ikonet på mobil */
     }
 }
 
-/* Navigasjonsmeny */
+
+@media only screen and (max-width: 768px) {
+    .sidebar {
+        display: none; /* Skjul sidebar på små skjermer */
+    }
+
+    .navbar {
+        flex-direction: column; /* Stabler navigasjonslenkene vertikalt */
+    }
+
+    .categori-box {
+        flex: 1 1 100%; /* Kategoriene tar hele bredden */
+        text-align: center; /* Sentraliser tekst på små skjermer */
+    }
+
+    /* Reduser padding og marginer */
+    .produkt, .component-box, .utstyr-box, .byggdin-box {
+        padding: 1rem;
+        margin: 0.5rem;
+    }
+
+    .component-grid, .utstyr-grid, .byggdin-grid {
+        grid-template-columns: 1fr; /* Vis elementene i én kolonne på små skjermer */
+    }
+}
+
+
+
+/*navbar*/
 .navbar {
+    
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Plasserer elementene på hver sin side */
     align-items: center;
+    right: 0;
 }
 
 .nav-left {
-    display: flex;
-    font-size: larger;
+    display:flex;
     align-items: center;
+}
+
+.nav-left a {
+    font-size: x-large;
+    
 }
 
 .nav-right {
     display: flex;
     gap: 1.25rem;
+    position:fixed;
+    right:0;
 }
 
 .nav-left a, .nav-right a {
-    color: white;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     padding: 1rem;
     transition: background-color 0.3s ease;
@@ -103,7 +123,8 @@ header {
     border-radius: 0.33rem;
 }
 
-/* Søkefelt */
+
+
 #searchInput {
     padding: 0.5rem;
     font-size: 1rem;
@@ -111,25 +132,32 @@ header {
     border: 1px solid #333;
     width: 12.5rem;
     transition: width 0.3s ease;
+    
 }
+
 
 #searchInput:focus {
-    width: 18.75rem;
+    width: 18.75rem; /* Utvid søkefeltet når det er i fokus */
 }
 
-/* Sidebar */
+
+
+
+
+
+/*sidebar*/
 .sidebar {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
-    background-color: #333;
+    gap: 1.25rem; /* Mellomrom mellom sirklene */
+    background-color: #333; /* Mørk bakgrunn */
     padding: 1rem;
     width: 6rem;
-    align-items: center;
-    position: fixed;
-    top: 4.9rem;
-    left: 0;
-    bottom: 0;
+    align-items: center; /* Sentraliserer sirklene horisontalt */
+    position: fixed; /* Fikser sidebaren på plass */
+    top: 5.1rem; /* Plasserer sidebaren under headeren */
+    left: 0; /* Plasserer sidebaren til venstre */
+    bottom: 0; /* Utvider sidebaren til bunnen av skjermen */
 }
 
 .scroll-btn {
@@ -137,7 +165,7 @@ header {
     height: 6rem;
     background-color: #333;
     color: white;
-    border-radius: 0.75rem;
+    border-radius: 0.75rem;/* Runde hjørner */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -147,27 +175,30 @@ header {
 
 .scroll-btn:hover {
     background-color: #555;
-    transform: scale(1.25);
+    transform: scale(1.25); /* Gjør sirklene litt større ved hover */
 }
 
-/* Kategori-seksjon */
+
+
+
 .categorier {
     display: flex;
-    gap: 3rem;
+    justify-content: flex-start;
+    gap:3rem;
     padding: 0.75rem;
-    margin-left: 15%;
-    margin-top: 5.1rem;
-    position: fixed;
-    width: calc(100% - 8rem);
+    margin-left: 15%; /* Space for sidebar */
+    margin-top: 5.1rem; /* Adjusted for header height */ 
+    position:fixed;
+    width: calc(100% - 8rem); /* Takes the full width minus the sidebar */
     z-index: 1000;
 }
 
 .categori-box {
-    background-color: #555;
+    background-color:#555;
     padding: 2rem 2.5rem;
     border-radius: 0.5rem;
     text-align: center;
-    color: white;
+    color: #ffffff;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -177,21 +208,26 @@ header {
     transform: scale(1.10);
 }
 
-/* Topprodukt-seksjon */
+
+
+
+
+/*utvalgte*/
 .topprodukt {
-    margin-top: 12rem;
+    margin-top:12rem;
     display: flex;
-    gap: 1rem;
+    gap: 1rem; /* Mellomrom mellom boksene */
     padding: 1.5rem;
-    margin-left: 8rem;
-    justify-content: space-between;
+    margin-left: 8rem; /* Gir plass til sidebaren til venstre */
+    justify-content: space-between; /* Fordeler boksene jevnt */
     margin-bottom: 3rem;
 }
 
+
 .produkt {
-    flex: 1;
-    text-align: center;
-    background-color: #f0f0f0;
+    flex: 1; /* Gjør hver boks like stor */
+    text-align: center; /* Sentraliserer tekst i boksen */
+    background-color: #f0f0f0; /* Lys grå bakgrunn */
     padding: 3rem;
     transition: transform 0.3s ease, background-color 0.3s ease;
     height: 30rem;
@@ -202,46 +238,54 @@ header {
     color: #333;
     font-size: 1.2em;
     display: block;
-    height: 100%;
+    height: 100%; /* Gjør hele boksen klikkbar */
     width: 100%;
 }
 
 .produkt:hover {
-    background-color: #ffffff;
-    transform: scale(1.05);
+    background-color: #ffffff; /* Endre bakgrunnsfarge ved hover */
+    transform: scale(1.05); /* Gjør boksen litt større ved hover */
 }
 
 .produkt a:hover {
     color: #000000;
+    transform: scale(1.05);
 }
 
-/* Komponenter-seksjon */
+
+
+
+
+
+
 .component-section {
     padding: 1.25rem;
-    margin-left: 8rem;
+    margin-left: 8rem; /* Gir plass til sidebaren */
 }
 
 .component-section h1 {
-    text-align: center;
+    text-align:center;
     margin-bottom: 1.25rem;
     margin-top: 0.75rem;
     font-size: 2em;
-    color: white;
+    color:#ffffff;
     background-color: #33c2ff;
     border-radius: 0.75rem;
-    padding: 0.75rem;
+    padding:0.75rem;
+
 }
 
 .component-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr); /* 4 kolonner */
+    gap: 2rem; /* Mellomrom mellom firkantene */
 }
 
 .component-box {
     background-color: #f0f0f0;
     padding: 2.5rem;
     text-align: center;
+    height: 6.25rem; /* Juster høyden etter behov */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -250,87 +294,188 @@ header {
 
 .component-box:hover {
     background-color: #e0e0e0;
-    transform: scale(1.05);
+    transform: scale(1.05); /* Gjør boksen litt større ved hover */
 }
 
-/* Utstyr-seksjon */
-.utstyr-section {
+
+
+
+
+
+
+
+
+.componentshown-section {
     padding: 1.25rem;
-    margin-left: 7.5rem;
+    margin-left:7.5rem; /* Gir plass til sidebaren */
 }
 
-.utstyr-section h1 {
-    text-align: center;
+.componentshown-section h1 {
+    text-align:center;
     margin-bottom: 1.25rem;
     margin-top: 0.625rem;
     font-size: 2em;
-    color: white;
+    color:#ffffff;
+    background-color: #33c2ff;
+
+    padding:0.625rem;
+
+}
+
+.componentshown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 kolonner */
+    gap: 1.25rem; /* Mellomrom mellom firkantene */
+}
+
+.componentshown-box {
+    background-color: #f0f0f0;
+    padding:3.75rem;
+    
+    text-align:center;
+    height: 12.5rem; /* Juster høyden etter behov */
+    display: flex;
+    margin-top: 3.125rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.componentshown-box:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05); /* Gjør boksen litt større ved hover */
+}
+
+
+
+
+
+.utstyr-section {
+    padding: 1.25rem;
+    margin-left: 7.5rem; /* Gir plass til sidebaren */
+}
+
+.utstyr-section h1 {
+    text-align:center;
+    margin-bottom: 1.25rem;
+    margin-top: 0.625rem;
+    font-size: 2em;
+    color:#ffffff;
     background-color: #33c2ff;
     border-radius: 0.625rem;
-    padding: 0.625rem;
+    padding:0.625rem;
+
 }
 
 .utstyr-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4.375rem;
+    grid-template-columns: repeat(3, 1fr); /* 4 kolonner */
+    gap: 4.375rem; /* Mellomrom mellom firkantene */
 }
 
 .utstyr-box {
     background-color: #f0f0f0;
     padding: 1.25rem;
-    border-radius: 2.5rem;
-    text-align: center;
+    border-radius: 2.5rem; /* Runde hjørner */
+    text-align:center;
+    height:5rem;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items:center;
+    justify-content:center;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .utstyr-box:hover {
     background-color: #e0e0e0;
-    transform: scale(1.05);
+    transform: scale(1.05); /* Gjør boksen litt større ved hover */
 }
 
-/* Bygg din egen PC-seksjon */
-.byggdinegen-section {
+
+
+.utstyrshown-section {
     padding: 1.25rem;
-    margin-left: 7.5rem;
+    margin-left:7.5rem; /* Gir plass til sidebaren */
 }
 
-.byggdinegen-section h1 {
-    text-align: center;
+.utstyrshown-section h1 {
+    text-align:center;
     margin-bottom: 1.25rem;
     margin-top: 0.625rem;
     font-size: 2em;
-    color: white;
+    color:#ffffff;
+    background-color: #33c2ff;
+
+    padding:0.625rem;
+
+}
+
+.utstyrshown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 kolonner */
+    gap: 1.25rem; /* Mellomrom mellom firkantene */
+}
+
+.utstyrshown-box {
+    background-color: #f0f0f0;
+    padding:3.75rem;
+    
+    text-align:center;
+    height: 12.5rem; /* Juster høyden etter behov */
+    display: flex;
+    margin-top: 3.125rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.utstyrshown-box:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05); /* Gjør boksen litt større ved hover */
+}
+
+
+
+
+
+.byggdinegen-section {
+    padding: 1.25rem;
+    margin-left: 7.5rem; /* Gir plass til sidebaren */
+}
+
+.byggdinegen-section h1 {
+    text-align:center;
+    margin-bottom: 1.25rem;
+    margin-top: 0.625rem;
+    font-size: 2em;
+    color:#ffffff;
     background-color: #33c2ff;
     border-radius: 0.625rem;
-    padding: 0.625rem;
+    padding:0.625rem;
+
 }
 
 .byggdinegen-section h3 {
     text-align: center;
-    color: white;
+    color:#ffffff;
     background-color: #555;
     border-radius: 0.625rem;
-    padding: 1rem;
 }
 
 .byggdin-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
+    grid-template-columns: repeat(3, 1fr); /* 4 kolonner */
+    gap: 4.375rem; /* Mellomrom mellom firkantene */
 }
 
 .byggdin-box {
     background-color: #f0f0f0;
-    padding: 2rem;
-    text-align: center;
+    padding: 4.25rem;
+    border-radius: 2.5rem; /* Runde hjørner */
+    text-align:center;
+    height:5rem;
+    display: flex;
+    align-items:center;
+    justify-content:center;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .byggdin-box:hover {
     background-color: #e0e0e0;
-    transform: scale(1.05);
+    transform: scale(1.05); /* Gjør boksen litt større ved hover */
 }
