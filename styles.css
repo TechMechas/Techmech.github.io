@@ -9,14 +9,16 @@ body {
 .container {
     max-width: 1200px; /* Adjust as needed */
     margin: 0 auto;
-    padding: 0 1rem; /* Add padding to the sides for extra space */
+    padding: 0 0; /* Add padding to the sides for extra space */
     background-color: #ffffff; /* Background color for the content area */
+    position: relative; /* Adjust for positioning */
+    top: 5.25rem; /* Adjust to align with navbar */
 }
 
 /* Header and Navbar */
 header {
     background-color: #33c2ff;
-    padding: 0; /* Remove extra padding */
+    padding: 1.25rem 1rem; /* Add padding to top and bottom */
     width: 100%;
     z-index: 1000;
     position: fixed;
@@ -34,7 +36,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem; /* Ensure padding matches container */
+    padding: 0; /* Remove extra padding */
 }
 
 .nav-left a {
@@ -58,7 +60,7 @@ header {
 
 .nav-right {
     display: flex;
-    gap: 1.25rem;
+    gap: 1rem;
     align-items: center;
 }
 
@@ -74,36 +76,48 @@ header {
 .nav-links {
     display: flex;
     gap: 1.25rem;
+    align-items: center; /* Align items vertically in center */
 }
 
+/* Navbar links styled as buttons */
 .nav-links a {
     color: white;
     text-decoration: none;
-    padding: 1rem;
-    transition: background-color 0.3s ease;
+    padding: 0.75rem 1.5rem; /* Padding to give button-like appearance */
+    background-color: #555; /* Background color for buttons */
+    border-radius: 0.5rem; /* Rounded corners for button */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-flex; /* Ensure they are aligned like buttons */
+    align-items: center; /* Center the text vertically */
+    box-sizing: border-box; /* Include padding and border in width/height */
+    border: 1px solid transparent; /* Border for button appearance */
 }
 
 .nav-links a:hover {
-    background-color: #555;
-    border-radius: 0.33rem;
+    background-color: #777; /* Slightly lighter on hover */
+    transform: scale(1.05); /* Slightly scale on hover */
+}
+
+.nav-links a:active {
+    background-color: #333; /* Darker background on click */
 }
 
 /* Categories */
 .categorier {
     display: flex;
     flex-wrap: wrap; /* Allow wrapping for smaller screens */
-    justify-content: flex-start;
-    gap: 1rem;
-    padding: 0.75rem;
-    margin-top: 5rem; /* Adjusted to fit below the fixed header */
-    background-color: #f0f0f0;
+    justify-content: space-between;
+    gap: 1.75rem;
+    padding: 0.25rem; /* Padding adjusted */
+    background-color: #ffffff00;
     max-width: 1200px; /* Match container width */
-    margin: 5rem auto 0; /* Align with container */
+    margin: 0 auto; /* Align with container */
+    position: fixed;
 }
 
 .categori-box {
-    background-color: #555;
-    padding: 2rem 2.5rem;
+    background-color: #7a7a7a;
+    padding: 1.5rem; /* Reduced padding */
     border-radius: 0.5rem;
     text-align: center;
     color: #ffffff;
@@ -113,12 +127,12 @@ header {
 
 .categori-box:hover {
     background-color: #33c2ff;
-    transform: scale(1.10);
+    transform: scale(1.05); /* Slightly smaller scale */
 }
 
 /* Main content */
 main {
-    padding-top: 7rem; /* Adjusted for fixed header */
+    padding-top: 5rem; /* Adjusted for fixed header */
     margin: 0;
 }
 
@@ -126,7 +140,7 @@ main {
 .Event {
     background-color: #33c2ff;
     padding: 1rem;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .eventen {
@@ -301,7 +315,6 @@ main {
         box-shadow: 0 0 10px rgba(0,0,0,0.1);
         flex-direction: column;
         width: 15rem;
-        z-index: 1000;
     }
 
     .nav-links a {
@@ -318,12 +331,14 @@ main {
         display: flex; /* Show navigation links when hamburger menu is active */
     }
 
-    .categorier {
-        margin-top: 1rem; /* Adjust margin for mobile */
-        flex-direction: column; /* Stack categories vertically on mobile */
+    /* Hide white space on mobile */
+    .container {
+        padding: 0; /* Remove extra padding on mobile */
+        max-width: 100%; /* Full width on mobile */
+        margin-top: 4rem; /* Adjust margin to align with navbar */
     }
 
-    .categori-box {
-        flex: 1 1 100%; /* Make categories full width on mobile */
+    .categorier {
+        margin-top: 1rem; /* Adjust margin for mobile */
     }
 }
