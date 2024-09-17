@@ -301,6 +301,7 @@ main {
         box-shadow: 0 0 10px rgba(0,0,0,0.1);
         flex-direction: column;
         width: 15rem;
+        z-index: 1000;
     }
 
     .nav-links a {
@@ -316,16 +317,13 @@ main {
     .hamburger-menu.active + .nav-links {
         display: flex; /* Show navigation links when hamburger menu is active */
     }
-}
-
-/* Hide white space on mobile */
-@media (max-width: 768px) {
-    .container {
-        padding: 0; /* Remove extra padding on mobile */
-        max-width: 100%; /* Full width on mobile */
-    }
 
     .categorier {
         margin-top: 1rem; /* Adjust margin for mobile */
+        flex-direction: column; /* Stack categories vertically on mobile */
+    }
+
+    .categori-box {
+        flex: 1 1 100%; /* Make categories full width on mobile */
     }
 }
