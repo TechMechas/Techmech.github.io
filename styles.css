@@ -471,15 +471,14 @@ header {
 
 
 
-
-.byggdinegen-section {
+.Bygg-section {
     padding: 1.25rem;
     margin-left: 7.5rem; /* Gir plass til sidebaren */
 }
 
-.byggdinegen-section h1 {
+.Bygg-section h1 {
     text-align:center;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.25rem;
     margin-top: 0.625rem;
     font-size: 2em;
     color:#ffffff;
@@ -489,35 +488,40 @@ header {
 
 }
 
-.byggdinegen-section h3 {
-    text-align: center;
-    color:#ffffff;
-    background-color:#a2a2a2;
-    border-radius: 0.625rem;
+
+
+.Bygg {
+    margin-top: 1rem;
+    display:flex;
+    padding:1rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
 }
 
-
-
-.byggdin-box {
-    background-color: #f0f0f0;
-    padding: 2.25rem;
-    border-radius: 2.5rem; /* Runde hjørner */
-    text-align:center;
-    height:5rem;
-    display: flex;
-    align-items:center;
-    justify-content:center;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+.Byggdin {
+    flex: 1; /* Gjør hver boks like stor */
+    text-align: center; /* Sentraliserer tekst i boksen */
+    background-color: #f0f0f0; /* Lys grå bakgrunn */
+    padding: 3rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    height: 10rem;
 }
 
-.byggdin-box:hover {
-    background-color: #e0e0e0;
-    transform: scale(1.05); /* Gjør boksen litt større ved hover */
-    border-color: #33c2ff;
-    outline:#33c2ff;
+.Byggdin a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2em;
+    display: block;
+    height: 100%; /* Gjør hele boksen klikkbar */
+    width: 100%;
 }
 
-.byggdin-box:focus {
-    border-color: #33c2ff;
-    outline: none;
+.Byggdin:hover {
+    background-color: #ffffff; /* Endre bakgrunnsfarge ved hover */
+    transform: scale(1.01); /* Gjør boksen litt større ved hover */
+}
+
+.Byggdin a:hover {
+    color: #000000;
+    transform: scale(1.01);
 }
