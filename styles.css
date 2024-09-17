@@ -16,7 +16,7 @@ body {
 /* Header and Navbar */
 header {
     background-color: #33c2ff;
-    padding: 1rem; /* Remove extra padding */
+    padding: 0; /* Remove extra padding */
     width: 100%;
     z-index: 1000;
     position: fixed;
@@ -54,22 +54,36 @@ header {
 
 #searchInput:focus {
     width: 18.75rem;
-    
 }
 
 .nav-right {
     display: flex;
     gap: 1.25rem;
+    align-items: center;
 }
 
-.nav-right a {
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.nav-links a {
     color: white;
     text-decoration: none;
     padding: 1rem;
     transition: background-color 0.3s ease;
 }
 
-.nav-right a:hover {
+.nav-links a:hover {
     background-color: #555;
     border-radius: 0.33rem;
 }
@@ -79,18 +93,17 @@ header {
     display: flex;
     flex-wrap: wrap; /* Allow wrapping for smaller screens */
     justify-content: flex-start;
-    gap: 0.5rem;
+    gap: 1rem;
     padding: 0.75rem;
     margin-top: 5rem; /* Adjusted to fit below the fixed header */
-    background-color: #ffffff00;
+    background-color: #f0f0f0;
     max-width: 1200px; /* Match container width */
     margin: 5rem auto 0; /* Align with container */
-    position: fixed;
 }
 
 .categori-box {
-    background-color: #838383;
-    padding: 1rem 2rem;
+    background-color: #555;
+    padding: 2rem 2.5rem;
     border-radius: 0.5rem;
     text-align: center;
     color: #ffffff;
@@ -111,33 +124,14 @@ main {
 
 /* Event banner */
 .Event {
-    margin-top: 2rem;
-    display: flex;
+    background-color: #33c2ff;
     padding: 1rem;
-    margin-bottom: 2rem;
+    color: white;
 }
 
 .eventen {
-    flex: 1;
     text-align: center;
-    background-color: #f0f0f0;
-    padding: 3rem;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    height: 40rem;
-}
-
-.eventen a {
-    text-decoration: none;
-    color: #333;
-    font-size: 1.2em;
-    display: block;
-    height: 100%;
-    width: 100%;
-}
-
-.eventen:hover {
-    background-color: #ffffff;
-    transform: scale(1.05);
+    padding: 1rem;
 }
 
 /* Product section */
@@ -281,4 +275,57 @@ main {
 .Byggdin:hover {
     background-color: #ffffff;
     transform: scale(1.01);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .nav-center {
+        display: none; /* Hide search input on mobile */
+    }
+
+    .nav-right {
+        display: none; /* Hide right side menu items */
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger menu */
+    }
+
+    .nav-links {
+        display: none; /* Hide navigation links initially */
+        position: absolute;
+        top: 3.5rem;
+        right: 1rem;
+        background-color: #33c2ff;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        flex-direction: column;
+        width: 15rem;
+    }
+
+    .nav-links a {
+        padding: 1rem;
+        border-bottom: 1px solid #ffffff;
+        text-align: center;
+    }
+
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    .hamburger-menu.active + .nav-links {
+        display: flex; /* Show navigation links when hamburger menu is active */
+    }
+}
+
+/* Hide white space on mobile */
+@media (max-width: 768px) {
+    .container {
+        padding: 0; /* Remove extra padding on mobile */
+        max-width: 100%; /* Full width on mobile */
+    }
+
+    .categorier {
+        margin-top: 1rem; /* Adjust margin for mobile */
+    }
 }
