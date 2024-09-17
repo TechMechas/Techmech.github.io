@@ -3,38 +3,42 @@ body {
     margin: 0;
     padding: 0;
     background-color: #a2a2a2;
-    display: flex;
-    justify-content: center;
 }
 
+/* Container to center and add white space on the sides */
 .container {
     max-width: 1200px; /* Adjust as needed */
-    width: 100%;
+    margin: 0 auto;
     padding: 0 1rem; /* Add padding to the sides for extra space */
-    background-color:#ffffff; /* Background color for the content area */
-    margin: 0 auto; /* Center the container */
-    z-index: 999;
+    background-color: #ffffff; /* Background color for the content area */
 }
 
 /* Header and Navbar */
 header {
     background-color: #33c2ff;
-    padding: 0.75rem 1.25rem;
-    position: fixed;
+    padding: 1rem; /* Remove extra padding */
     width: 100%;
     z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .navbar {
+    background-color: #33c2ff;
+}
+
+.nav-content {
+    max-width: 1200px; /* Match container width */
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 100%;
-    margin: 0 auto;
+    padding: 0 1rem; /* Ensure padding matches container */
 }
 
 .nav-left a {
-    color: rgb(0, 0, 0);
+    color: white;
     text-decoration: none;
     font-size: 1.5rem;
 }
@@ -50,6 +54,7 @@ header {
 
 #searchInput:focus {
     width: 18.75rem;
+    
 }
 
 .nav-right {
@@ -58,7 +63,7 @@ header {
 }
 
 .nav-right a {
-    color: rgb(0, 0, 0);
+    color: white;
     text-decoration: none;
     padding: 1rem;
     transition: background-color 0.3s ease;
@@ -72,18 +77,20 @@ header {
 /* Categories */
 .categorier {
     display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
     justify-content: flex-start;
     gap: 0.5rem;
     padding: 0.75rem;
-    margin-top: 5.1rem;
+    margin-top: 5rem; /* Adjusted to fit below the fixed header */
     background-color: #ffffff00;
+    max-width: 1200px; /* Match container width */
+    margin: 5rem auto 0; /* Align with container */
     position: fixed;
-    z-index: 1000;
 }
 
 .categori-box {
-    background-color: #555;
-    padding: 2rem 2.5rem;
+    background-color: #838383;
+    padding: 1rem 2rem;
     border-radius: 0.5rem;
     text-align: center;
     color: #ffffff;
@@ -98,7 +105,7 @@ header {
 
 /* Main content */
 main {
-    padding-top: 10rem;
+    padding-top: 7rem; /* Adjusted for fixed header */
     margin: 0;
 }
 
@@ -130,12 +137,13 @@ main {
 
 .eventen:hover {
     background-color: #ffffff;
-    transform: scale(1.01);
+    transform: scale(1.05);
 }
 
-/* Top products */
+/* Product section */
 .topprodukt {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     padding: 1.5rem;
     justify-content: space-between;
@@ -149,6 +157,7 @@ main {
     padding: 3rem;
     transition: transform 0.3s ease, background-color 0.3s ease;
     height: 30rem;
+    max-width: calc(25% - 1rem); /* Adjust based on flex basis and gap */
 }
 
 .produkt a {
@@ -183,7 +192,7 @@ main {
 
 .component-grid, .utstyr-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid columns */
     gap: 2rem;
 }
 
@@ -209,7 +218,7 @@ main {
 
 .componentshown-grid, .utstyrshown-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid columns */
     gap: 1.25rem;
 }
 
@@ -272,27 +281,4 @@ main {
 .Byggdin:hover {
     background-color: #ffffff;
     transform: scale(1.01);
-}
-
-/* Responsive design */
-@media only screen and (max-width: 768px) {
-    .navbar, .categorier {
-        flex-direction: column;
-    }
-
-    .nav-right, .categorier {
-        display: none;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    main {
-        margin-left: 0;
-    }
-
-    .component-grid, .utstyr-grid, .componentshown-grid, .utstyrshown-grid {
-        grid-template-columns: 1fr;
-    }
 }
