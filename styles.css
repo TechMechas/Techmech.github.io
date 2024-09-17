@@ -4,126 +4,37 @@ body {
     padding: 0;
     background-color: #a2a2a2;
     display: flex;
-    flex-direction: column; /* Sørger for at headeren og innholdet er i kolonne */
+    justify-content: center;
 }
 
-/* Endringer for skjermer som er mindre enn 480px (mobiler) */
-@media only screen and (max-width: 480px) {
-    .navbar {
-        font-size: 0.9rem; /* Reduser skriftstørrelsen på mobilen */
-    }
-
-    header {
-        padding: 0.5rem;
-    }
-
-    .produkt {
-        padding: 0.5rem;
-        height: auto; /* La høyden justeres automatisk på mobil */
-    }
-
-    .categori-box {
-        padding: 0.5rem;
-    }
+/* Container to center and add white space on the sides */
+.container {
+    max-width: 1200px; /* Adjust as needed */
+    width: 100%;
+    padding: 0 1rem; /* Add padding to the sides for extra space */
+    background-color: #ffffff; /* Background color for the content area */
 }
 
-
+/* Header and Navbar */
 header {
     background-color: #33c2ff;
     padding: 0.75rem 1.25rem;
-    width: flex; /* Full bredde av skjermen */
     position: fixed;
-    right:0;
-    left:0;
-    z-index:1000;
+    width: 100%;
+    z-index: 1000;
 }
 
-.hamburger {
-    display: none; /* Gjem hamburger-ikonet på desktop */
-    font-size: 2rem;
-    cursor: pointer;
-    padding: 0.5rem;
-}
-
-@media only screen and (max-width: 768px) {
-    .navbar {
-        display: none;
-        flex-direction: column;
-        background-color: #333;
-    }
-
-    .hamburger {
-        display: block; /* Vis hamburger-ikonet på mobil */
-    }
-}
-
-
-@media only screen and (max-width: 768px) {
-    .sidebar {
-        display: none; /* Skjul sidebar på små skjermer */
-    }
-
-    .navbar {
-        flex-direction: column; /* Stabler navigasjonslenkene vertikalt */
-    }
-
-    .categori-box {
-        flex: 1 1 100%; /* Kategoriene tar hele bredden */
-        text-align: center; /* Sentraliser tekst på små skjermer */
-    }
-
-    /* Reduser padding og marginer */
-    .produkt, .component-box, .utstyr-box, .byggdin-box {
-        padding: 1rem;
-        margin: 0.5rem;
-    }
-
-    .component-grid, .utstyr-grid, .byggdin-grid {
-        grid-template-columns: 1fr; /* Vis elementene i én kolonne på små skjermer */
-    }
-}
-
-
-
-/*navbar*/
 .navbar {
-    
     display: flex;
-    justify-content: space-between; /* Plasserer elementene på hver sin side */
-    align-items: center;
-    right: 0;
-}
-
-.nav-left {
-    display:flex;
+    justify-content: space-between;
     align-items: center;
 }
 
 .nav-left a {
-    font-size: x-large;
-    
-}
-
-.nav-right {
-    display: flex;
-    gap: 1.25rem;
-    position:fixed;
-    right:0;
-}
-
-.nav-left a, .nav-right a {
-    color: rgb(255, 255, 255);
+    color: white;
     text-decoration: none;
-    padding: 1rem;
-    transition: background-color 0.3s ease;
+    font-size: 1.5rem;
 }
-
-.nav-left a:hover, .nav-right a:hover {
-    background-color: #555;
-    border-radius: 0.33rem;
-}
-
-
 
 #searchInput {
     padding: 0.5rem;
@@ -132,74 +43,44 @@ header {
     border: 1px solid #333;
     width: 12.5rem;
     transition: width 0.3s ease;
-    
 }
-
 
 #searchInput:focus {
-    width: 18.75rem; /* Utvid søkefeltet når det er i fokus */
+    width: 18.75rem;
 }
 
-
-
-
-
-
-/*sidebar*/
-.sidebar {
+.nav-right {
     display: flex;
-    flex-direction: column;
-    gap: 1.25rem; /* Mellomrom mellom sirklene */
-    background-color: #333; /* Mørk bakgrunn */
-    padding: 1rem;
-    width: 6rem;
-    align-items: center; /* Sentraliserer sirklene horisontalt */
-    position: fixed; /* Fikser sidebaren på plass */
-    top: 5.1rem; /* Plasserer sidebaren under headeren */
-    left: 0; /* Plasserer sidebaren til venstre */
-    bottom: 0; /* Utvider sidebaren til bunnen av skjermen */
+    gap: 1.25rem;
 }
 
-.scroll-btn {
-    width: 6.5rem;
-    height: 6rem;
-    background-color:#555;
+.nav-right a {
     color: white;
-    border-radius: 0.75rem;/* Runde hjørner */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2em;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    padding: 1rem;
+    transition: background-color 0.3s ease;
 }
 
-.scroll-btn:hover {
+.nav-right a:hover {
     background-color: #555;
-    transform: scale(1.15); /* Gjør sirklene litt større ved hover */
+    border-radius: 0.33rem;
 }
 
-
-.scroll-btn:focus {
-    border-color: #33c2ff;
-    outline: none;
-}
-
-
-
+/* Categories */
 .categorier {
     display: flex;
     justify-content: flex-start;
-    gap:3rem;
+    gap: 3rem;
     padding: 0.75rem;
-    margin-left: 15%; /* Space for sidebar */
-    margin-top: 5.1rem; /* Adjusted for header height */ 
-    position:fixed;
-    width: calc(100% - 8rem); /* Takes the full width minus the sidebar */
+    margin-top: 5.1rem;
+    position: fixed;
+    width: calc(100% - 8rem);
     z-index: 1000;
+    background-color: #f0f0f0;
 }
 
 .categori-box {
-    background-color:#555;
+    background-color: #555;
     padding: 2rem 2.5rem;
     border-radius: 0.5rem;
     text-align: center;
@@ -213,19 +94,23 @@ header {
     transform: scale(1.10);
 }
 
+/* Main content */
+main {
+    padding-top: 10rem;
+}
 
+/* Event banner */
 .Event {
-    margin-top: 11rem;
-    display:flex;
-    padding:1rem;
-    margin-left: 8rem;
+    margin-top: 2rem;
+    display: flex;
+    padding: 1rem;
     margin-bottom: 2rem;
 }
 
 .eventen {
-    flex: 1; /* Gjør hver boks like stor */
-    text-align: center; /* Sentraliserer tekst i boksen */
-    background-color: #f0f0f0; /* Lys grå bakgrunn */
+    flex: 1;
+    text-align: center;
+    background-color: #f0f0f0;
     padding: 3rem;
     transition: transform 0.3s ease, background-color 0.3s ease;
     height: 40rem;
@@ -236,37 +121,28 @@ header {
     color: #333;
     font-size: 1.2em;
     display: block;
-    height: 100%; /* Gjør hele boksen klikkbar */
+    height: 100%;
     width: 100%;
 }
 
 .eventen:hover {
-    background-color: #ffffff; /* Endre bakgrunnsfarge ved hover */
-    transform: scale(1.01); /* Gjør boksen litt større ved hover */
-}
-
-.eventen a:hover {
-    color: #000000;
+    background-color: #ffffff;
     transform: scale(1.01);
 }
 
-
-/*utvalgte*/
+/* Top products */
 .topprodukt {
-    margin-top:5rem;
     display: flex;
-    gap: 1rem; /* Mellomrom mellom boksene */
+    gap: 1rem;
     padding: 1.5rem;
-    margin-left: 8rem; /* Gir plass til sidebaren til venstre */
-    justify-content: space-between; /* Fordeler boksene jevnt */
+    justify-content: space-between;
     margin-bottom: 3rem;
 }
 
-
 .produkt {
-    flex: 1; /* Gjør hver boks like stor */
-    text-align: center; /* Sentraliserer tekst i boksen */
-    background-color: #f0f0f0; /* Lys grå bakgrunn */
+    flex: 1;
+    text-align: center;
+    background-color: #f0f0f0;
     padding: 3rem;
     transition: transform 0.3s ease, background-color 0.3s ease;
     height: 30rem;
@@ -277,231 +153,105 @@ header {
     color: #333;
     font-size: 1.2em;
     display: block;
-    height: 100%; /* Gjør hele boksen klikkbar */
+    height: 100%;
     width: 100%;
 }
 
 .produkt:hover {
-    background-color: #ffffff; /* Endre bakgrunnsfarge ved hover */
-    transform: scale(1.05); /* Gjør boksen litt større ved hover */
-}
-
-.produkt a:hover {
-    color: #000000;
+    background-color: #ffffff;
     transform: scale(1.05);
 }
 
-
-
-
-
-
-
-.component-section {
+/* Component section */
+.component-section, .utstyr-section {
     padding: 1.25rem;
-    margin-left: 8rem; /* Gir plass til sidebaren */
 }
 
-.component-section h1 {
-    text-align:center;
+.component-section h1, .utstyr-section h1 {
+    text-align: center;
     margin-bottom: 1.25rem;
     margin-top: 0.75rem;
     font-size: 2em;
-    color:#ffffff;
+    color: #ffffff;
     background-color: #33c2ff;
     border-radius: 0.75rem;
-    padding:0.75rem;
-
+    padding: 0.75rem;
 }
 
-.component-grid {
+.component-grid, .utstyr-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 kolonner */
-    gap: 2rem; /* Mellomrom mellom firkantene */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
 }
 
-.component-box {
+.component-box, .utstyr-box {
     background-color: #f0f0f0;
     padding: 2.5rem;
     text-align: center;
-    height: 6.25rem; /* Juster høyden etter behov */
     display: flex;
     align-items: center;
     justify-content: center;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.component-box:hover {
+.component-box:hover, .utstyr-box:hover {
     background-color: #e0e0e0;
-    transform: scale(1.05); /* Gjør boksen litt større ved hover */
+    transform: scale(1.05);
 }
 
-
-
-
-
-
-
-
-
-.componentshown-section {
+/* Component shown section */
+.componentshown-section, .utstyrshown-section {
     padding: 1.25rem;
-    margin-left:7.5rem; /* Gir plass til sidebaren */
 }
 
-.componentshown-section h1 {
-    text-align:center;
-    margin-bottom: 1.25rem;
-    margin-top: 0.625rem;
-    font-size: 2em;
-    color:#ffffff;
-    background-color: #33c2ff;
-
-    padding:0.625rem;
-
-}
-
-.componentshown-grid {
+.componentshown-grid, .utstyrshown-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 kolonner */
-    gap: 1.25rem; /* Mellomrom mellom firkantene */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
 }
 
-.componentshown-box {
+.componentshown-box, .utstyrshown-box {
     background-color: #f0f0f0;
-    padding:3.75rem;
-    
-    text-align:center;
-    height: 12.5rem; /* Juster høyden etter behov */
+    padding: 3.75rem;
+    text-align: center;
+    height: 12.5rem;
     display: flex;
     margin-top: 3.125rem;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.componentshown-box:hover {
+.componentshown-box:hover, .utstyrshown-box:hover {
     background-color: #e0e0e0;
-    transform: scale(1.05); /* Gjør boksen litt større ved hover */
+    transform: scale(1.05);
 }
 
-
-
-
-
-.utstyr-section {
-    padding: 1.25rem;
-    margin-left: 7.5rem; /* Gir plass til sidebaren */
-}
-
-.utstyr-section h1 {
-    text-align:center;
-    margin-bottom: 1.25rem;
-    margin-top: 0.625rem;
-    font-size: 2em;
-    color:#ffffff;
-    background-color: #33c2ff;
-    border-radius: 0.625rem;
-    padding:0.625rem;
-
-}
-
-.utstyr-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 4 kolonner */
-    gap: 4.375rem; /* Mellomrom mellom firkantene */
-}
-
-.utstyr-box {
-    background-color: #f0f0f0;
-    padding: 1.25rem;
-    border-radius: 2.5rem; /* Runde hjørner */
-    text-align:center;
-    height:5rem;
-    display: flex;
-    align-items:center;
-    justify-content:center;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.utstyr-box:hover {
-    background-color: #e0e0e0;
-    transform: scale(1.05); /* Gjør boksen litt større ved hover */
-}
-
-
-
-.utstyrshown-section {
-    padding: 1.25rem;
-    margin-left:7.5rem; /* Gir plass til sidebaren */
-}
-
-.utstyrshown-section h1 {
-    text-align:center;
-    margin-bottom: 1.25rem;
-    margin-top: 0.625rem;
-    font-size: 2em;
-    color:#ffffff;
-    background-color: #33c2ff;
-
-    padding:0.625rem;
-
-}
-
-.utstyrshown-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 kolonner */
-    gap: 1.25rem; /* Mellomrom mellom firkantene */
-}
-
-.utstyrshown-box {
-    background-color: #f0f0f0;
-    padding:3.75rem;
-    
-    text-align:center;
-    height: 12.5rem; /* Juster høyden etter behov */
-    display: flex;
-    margin-top: 3.125rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.utstyrshown-box:hover {
-    background-color: #e0e0e0;
-    transform: scale(1.05); /* Gjør boksen litt større ved hover */
-}
-
-
-
-
+/* Build your PC section */
 .Bygg-section {
     padding: 1.25rem;
-    margin-left: 7.5rem; /* Gir plass til sidebaren */
 }
 
 .Bygg-section h1 {
-    text-align:center;
+    text-align: center;
     margin-bottom: 0.25rem;
     margin-top: 0.625rem;
     font-size: 2em;
-    color:#ffffff;
+    color: #ffffff;
     background-color: #33c2ff;
     border-radius: 0.625rem;
-    padding:0.625rem;
-
+    padding: 0.625rem;
 }
-
-
 
 .Bygg {
     margin-top: 1rem;
-    display:flex;
-    padding:1rem;
-    margin-left: 2rem;
+    display: flex;
+    padding: 1rem;
     margin-bottom: 2rem;
 }
 
 .Byggdin {
-    flex: 1; /* Gjør hver boks like stor */
-    text-align: center; /* Sentraliserer tekst i boksen */
-    background-color: #f0f0f0; /* Lys grå bakgrunn */
+    flex: 1;
+    text-align: center;
+    background-color: #f0f0f0;
     padding: 3rem;
     transition: transform 0.3s ease, background-color 0.3s ease;
     height: 10rem;
@@ -512,16 +262,34 @@ header {
     color: #333;
     font-size: 1.2em;
     display: block;
-    height: 100%; /* Gjør hele boksen klikkbar */
+    height: 100%;
     width: 100%;
 }
 
 .Byggdin:hover {
-    background-color: #ffffff; /* Endre bakgrunnsfarge ved hover */
-    transform: scale(1.01); /* Gjør boksen litt større ved hover */
+    background-color: #ffffff;
+    transform: scale(1.01);
 }
 
-.Byggdin a:hover {
-    color: #000000;
-    transform: scale(1.01);
+/* Responsive design */
+@media only screen and (max-width: 768px) {
+    .navbar, .categorier {
+        flex-direction: column;
+    }
+
+    .nav-right, .categorier {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+    .component-grid, .utstyr-grid, .componentshown-grid, .utstyrshown-grid {
+        grid-template-columns: 1fr;
+    }
 }

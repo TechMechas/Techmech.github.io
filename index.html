@@ -5,204 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechMech</title>
     <link rel="stylesheet" href="styles.css">
-
-
 </head>
-
-
-
-
 <body>
     <header>
         <nav class="navbar">
             <div class="nav-left">
                 <a href="#techmech"><strong>TechMech</strong></a>
             </div>
-            <div class="nav-right">
+            <div class="nav-center">
                 <input type="text" id="searchInput" placeholder="Søk her...">
+            </div>
+            <div class="nav-right">
                 <a href="navbar/info.html">Info</a>
                 <a href="navbar/hjelp.html">Hjelp</a>
                 <a href="navbar/logginn.html">Logg inn</a>
                 <a href="navbar/innstillinger.html">Innstillinger</a>
                 <a href="navbar/handlekurv.html">Handlekurv</a>
-
-             
-
             </div>
         </nav>
     </header>
 
-
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-<nav class="navbar" id="navbar">
-    <a href="navbar/info.html">Info</a>
-    <a href="navbar/hjelp.html">Hjelp</a>
-    <a href="navbar/logginn.html">Logg inn</a>
-    <a href="navbar/innstillinger.html">Innstillinger</a>
-    <a href="navbar/handlekurv.html">Handlekurv</a>
-</nav>
-
-<script>
-    function toggleMenu() {
-        var x = document.getElementById("navbar");
-        if (x.style.display === "block") {
-            x.style.display = "none";
-        } else {
-            x.style.display = "block";
-        }
-    }
-</script>
- 
-
-
-
-
-    <aside class="sidebar">
-        <button class="scroll-btn" data-scroll="0">Trending</button>
-        <button class="scroll-btn" data-scroll="1600">PC deler</button>
-        <button class="scroll-btn" data-scroll="2520">utstyr</button>
-        <button class="scroll-btn" data-scroll="3000">bygg pc</button>
-        <button class="scroll-btn" data-scroll="2000">5</button>
-        <button class="scroll-btn" data-scroll="2500">6</button>
-        <button class="scroll-btn" data-scroll="3000">7</button>
-        <button class="scroll-btn" data-scroll="3500">8</button>
-        <button class="scroll-btn" data-scroll="4000">9</button>
-        <button class="scroll-btn" data-scroll="4500">10</button>
-    </aside>
-
-   
-    <script>
-        document.querySelectorAll('.scroll-btn').forEach(function(button) {
-            button.addEventListener('click', function() {
-                const scrollPosition = parseInt(this.getAttribute('data-scroll'));
-                window.scrollTo({
-                    top: scrollPosition,
-                    behavior: 'smooth' // Optional: Adds smooth scrolling
-                });
-            });
-        });
-    </script>
-
-
-<script>
-    // Funksjon for å filtrere kategoriene basert på søk
-    function filterCategories() {
-        const searchInput = document.getElementById('searchInput').value.toLowerCase();
-        const categories = document.getElementsByClassName('categori-box');
-
-        // Loop gjennom alle kategoriene og skjul de som ikke matcher søket
-        for (let i = 0; i < categories.length; i++) {
-            const categoryText = categories[i].textContent.toLowerCase();
-
-            // Sjekk om søket stemmer overens med kategorien
-            if (categoryText.includes(searchInput)) {
-                categories[i].style.display = '';
-            } else {
-                categories[i].style.display = 'none';
-            }
-        }
-    }
-
-    // Lytt til input i søkefeltet
-    document.getElementById('searchInput').addEventListener('input', filterCategories);
-</script>
-
-
-<div class="categorier">
-    <div class="categori-box">Gaming</div>
-    <div class="categori-box">Skjerm</div>
-    <div class="categori-box">Deler</div>
-    <div class="categori-box">nettverk</div>
-    <div class="categori-box">Minne</div>
-    <div class="categori-box">Tastatur</div>
-    <div class="categori-box">Mus</div>
-    <div class="categori-box">Laptop</div>
-    <div class="categori-box">PC</div>
-    <div class="categori-box">Salg</div>
-</div>
-
-    
-<div class="Event">
-    <div class="eventen">
-    <a href="event.html">SALG bla bla bla</a>
-    </div>
-</div>
-    <div class="topprodukt">
-        <div class="produkt">
-            <a href="produkt1.html">PC Produkt 1</a>
+    <div class="container">
+        <div class="categorier">
+            <div class="categori-box">Gaming</div>
+            <div class="categori-box">Skjerm</div>
+            <div class="categori-box">Deler</div>
+            <div class="categori-box">Nettverk</div>
+            <div class="categori-box">Minne</div>
+            <div class="categori-box">Tastatur</div>
+            <div class="categori-box">Mus</div>
+            <div class="categori-box">Laptop</div>
+            <div class="categori-box">PC</div>
+            <div class="categori-box">Salg</div>
         </div>
-        <div class="produkt">
-            <a href="produkt2.html">PC Produkt 2</a>
-        </div>
-        <div class="produkt">
-            <a href="produkt3.html">PC Produkt 3</a>
-        </div>
-        <div class="produkt">
-            <a href="produkt4.html">PC Produkt 4</a>
-        </div>
+
+        <main>
+            <section class="banner Event">
+                <div class="eventen">
+                    <a href="event.html">SALG bla bla bla</a>
+                </div>
+            </section>
+
+            <section class="topprodukt">
+                <div class="produkt">
+                    <a href="produkt1.html">PC Produkt 1</a>
+                </div>
+                <div class="produkt">
+                    <a href="produkt2.html">PC Produkt 2</a>
+                </div>
+                <div class="produkt">
+                    <a href="produkt3.html">PC Produkt 3</a>
+                </div>
+                <div class="produkt">
+                    <a href="produkt4.html">PC Produkt 4</a>
+                </div>
+            </section>
+
+            <section class="component-section">
+                <h1>Komponenter</h1>
+                <div class="component-grid">
+                    <div class="component-box">Prosessor</div>
+                    <div class="component-box">Grafikkort</div>
+                    <div class="component-box">Hovedkort</div>
+                    <div class="component-box">PC-kabinett</div>
+                    <div class="component-box">Minnebrikker</div>
+                    <div class="component-box">Minne</div>
+                    <div class="component-box">Strømforsyning</div>
+                    <div class="component-box">Kjøling</div>
+                </div>
+            </section>
+
+            <section class="componentshown-section">
+                <div class="componentshown-grid">
+                    <div class="componentshown-box">Prosessor</div>
+                    <div class="componentshown-box">Grafikkort</div>
+                    <div class="componentshown-box">Hovedkort</div>
+                    <div class="componentshown-box">PC-kabinett</div>
+                </div>
+            </section>
+
+            <section class="utstyr-section">
+                <h1>Utstyr</h1>
+                <div class="utstyr-grid">
+                    <div class="utstyr-box">MUS</div>
+                    <div class="utstyr-box">MUSMATTE</div>
+                    <div class="utstyr-box">TASTATUR</div>
+                    <div class="utstyr-box">HEADSETT</div>
+                    <div class="utstyr-box">SKJERM</div>
+                    <div class="utstyr-box">KABLER</div>
+                    <div class="utstyr-box">NETTVERK</div>
+                    <div class="utstyr-box">ADAPTERE</div>
+                    <div class="utstyr-box">VIFTER</div>
+                </div>
+            </section>
+
+            <section class="utstyrshown-section">
+                <div class="utstyrshown-grid">
+                    <div class="utstyrshown-box">Prosessor</div>
+                    <div class="utstyrshown-box">Grafikkort</div>
+                    <div class="utstyrshown-box">Hovedkort</div>
+                    <div class="utstyrshown-box">PC-kabinett</div>
+                </div>
+            </section>
+
+            <section class="Bygg-section">
+                <h1>Bygg din egen PC</h1>
+                <div class="Bygg">
+                    <div class="Byggdin">
+                        <a href="byggdin/byggdinher.html">SALG bla bla bla</a>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
 
-
-    <section class="component-section">
-        <h1>Komponenter</h1>
-        <div class="component-grid">
-            <div class="component-box">Prosessor</div>
-            <div class="component-box">Grafikkort</div>
-            <div class="component-box">Hovedkort</div>
-            <div class="component-box">PC-kabinett</div>
-            <div class="component-box">Minnebrikker</div>
-            <div class="component-box">Minne</div>
-            <div class="component-box">Strømforsyning</div>
-            <div class="component-box">Kjøling</div>
-        </div>
-    </section>
-
-    <section class="componentshown-section">
-        <div class="componentshown-grid">
-            <div class="componentshown-box">Prosessor</div>
-            <div class="componentshown-box">Grafikkort</div>
-            <div class="componentshown-box">Hovedkort</div>
-            <div class="componentshown-box">PC-kabinett</div>
-        
-        </div>
-    </section>
-
-    <section class="utstyr-section">
-        <h1>utstyr</h1>
-       
-        <div class="utstyr-grid">
-            <div class="utstyr-box">MUS</div>
-            <div class="utstyr-box">MUSMATTE</div>
-            <div class="utstyr-box">TASTATUR</div>
-            <div class="utstyr-box">HEADSETT</div>
-            <div class="utstyr-box">SKJERM</div>
-            <div class="utstyr-box">KABLER</div>
-            <div class="utstyr-box">NETTVERK</div>
-            <div class="utstyr-box">ADAPTERE</div>
-            <div class="utstyr-box">VIFTER</div>
-        </div>
-    </section>
-
-    <section class="utstyrshown-section">
-        <div class="utstyrshown-grid">
-            <div class="utstyrshown-box">Prosessor</div>
-            <div class="utstyrshown-box">Grafikkort</div>
-            <div class="utstyrshown-box">Hovedkort</div>
-            <div class="utstyrshown-box">PC-kabinett</div>
-        
-        </div>
-    </section>
-
-<section class="Bygg-section">
-    <h1>Bygg din egen PC</h1>
-    <div class="Bygg">
-       
-        <div class="Byggdin">
-
-        <a href="byggdin/byggdinher.html">SALG bla bla bla</a>
-        </div>
-    </div>
-</section>
-
+    <script src="script.js"></script>
 </body>
 </html>
