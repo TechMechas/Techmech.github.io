@@ -84,7 +84,7 @@ header {
     color: white;
     text-decoration: none;
     padding: 0.75rem 1.5rem; /* Padding to give button-like appearance */
-    background-color: #55555500; /* Background color for buttons */
+    background-color:#c00000; /* Background color for buttons */
     border-radius: 0.5rem; /* Rounded corners for button */
     transition: background-color 0.3s ease, transform 0.3s ease;
     display: inline-flex; /* Ensure they are aligned like buttons */
@@ -99,7 +99,7 @@ header {
 }
 
 .nav-links a:active {
-    background-color: #ff1e1e00; /* Darker background on click */
+    background-color: #c00000; /* Darker background on click */
 }
 
 /* Categories */
@@ -107,7 +107,7 @@ header {
     display: flex;
     flex-wrap: wrap; /* Allow wrapping for smaller screens */
     justify-content: space-between;
-    gap: 1.75rem;
+    gap: 1rem;
     padding: 0.25rem; /* Padding adjusted */
     background-color: #ffffff00;
     max-width: 1200px; /* Match container width */
@@ -118,7 +118,7 @@ header {
 
 .categori-box {
     background-color: #353535;
-    padding: 1.5rem; /* Reduced padding */
+    padding: 1.25rem; /* Reduced padding */
     border-radius: 0.5rem;
     text-align: center;
     color: #ffffff;
@@ -142,20 +142,22 @@ main {
     display: block;
     text-decoration: none;
     color: inherit; /* Arv fargen fra innholdet */
+    padding:0.5rem;
 }
 
 .eventen {
+    
     text-align: center;
-    padding: 1rem;
+    padding: 3rem;
     height:600px;
-    background-color: #000000;
+    background-color: #ffffff;
     color: white;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .eventen:hover {
     background-color: #ffffff;
-    transform: scale(1.01);
+    transform: scale(1.0015);
 }
 
 
