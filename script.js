@@ -1,4 +1,3 @@
-console.log("hi")
 
 document.addEventListener('DOMContentLoaded', () => {
     const hamburgerMenu = document.querySelector('.hamburger-menu');
